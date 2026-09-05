@@ -1,0 +1,81 @@
+/* 3D Interactive Canvas Background */
+#bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(135deg, #050811, #0f0c29, #240b36);
+}
+
+/* Unique Glowing Animated Logo */
+@keyframes logoPulse {
+    0% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 10px #3b82f6); }
+    50% { transform: scale(1.08) rotate(3deg); filter: drop-shadow(0 0 25px #a855f7); }
+    100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 10px #3b82f6); }
+}
+.animated-logo {
+    animation: logoPulse 4s infinite ease-in-out;
+}
+
+/* Animated Navbar Links Hover Effect */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(90deg, #3b82f6, #ec4899);
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Creator Text Animation */
+@keyframes rainbowShine {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.creator-badge {
+    background: linear-gradient(270deg, #3b82f6, #ec4899, #8b5cf6, #3b82f6);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowShine 5s ease infinite;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-view {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.section-view.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Animated Notice Popup Styles */
+@keyframes popupBounce {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+.notice-popup-animate {
+    animation: popupBounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
